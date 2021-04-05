@@ -1,0 +1,75 @@
+$og: #FF7A00;
+$darkOg: #D44000;
+$light: #FFEFCF;
+$dark: #46403C;
+
+$duration: .3s;
+$distance: 50px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+$delagothic: 'Dela Gothic One', cursive;
+$poppins: 'Poppins', sans-serif;
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == mobile {
+        @media only screen and (max-width: 768px) { @content };
+    }
+
+    @if $breakpoint == tablet {
+        @media only screen and (min-width: 769px) { @content };
+    }
+
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 1000px) { @content };
+    }
+}
+
+@mixin flexsb() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex($direction, $jc, $ai) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin hoverCross() {
+    &:before,
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 30%;
+		left: 0; right: 0;
+		height: 9px;
+		background-color: $darkOg;
+	}
+	&:before {
+		opacity: 0;
+		transform: translateX(- $distance);
+		transition: transform 0s $easeOutBack, opacity 0s;
+	}
+	&:after {
+		opacity: 0;
+		transform: translateX($distance/2);
+		transition: transform $duration $easeOutBack, opacity $duration;
+	}
+	&:hover,
+	&:focus {
+		&:before,
+		&:after {
+			opacity: 1;
+			transform: translateX(0);
+		}
+		&:before {
+			transition: transform $duration $easeOutBack, opacity $duration;
+		}
+		&:after {
+			transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+		}
+	}
+}
+

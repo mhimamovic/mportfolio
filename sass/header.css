@@ -1,0 +1,31 @@
+.nav {
+  height: 10vh;
+  background: yellow;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__Links:not(:last-child) {
+  margin-right: 1em;
+}
+
+.nav__Bar {
+  display: none;
+}
+
+.hero {
+  position: absolute;
+  top: 10vh;
+  height: 90vh;
+}
+/*# sourceMappingURL=header.css.map */

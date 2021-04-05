@@ -1,0 +1,71 @@
+@import 'variables';
+
+.heading {
+    font-size: 3rem;
+    font-family: $delagothic;
+    margin: 0;
+    color: $dark;
+
+    @include responsive(desktop) {
+        font-size: 4rem;
+    }
+}
+
+.subheading {
+    font-size: 2.6rem;
+    font-family: $delagothic;
+    color: $light;
+
+   &__Footer {
+       color: $darkOg;
+       font-size: 2.6rem;
+       font-family: $delagothic;
+   }
+
+   &Dark {
+       color: $dark;
+       font-family: $delagothic;
+       font-size: 2.6rem;
+       margin-bottom: 0.1rem;
+   }
+}
+
+.smallHeading {
+    font-family: $poppins;
+    color: $dark;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.text {
+    font-size: 1.2rem;
+    color: $light;
+
+    &__Footer {
+        color: $darkOg;
+        font-size: 1.2rem;
+    }
+}
+
+.link {
+    color: $og!important;
+    font-size: 2em;
+    text-decoration: none;
+    background:linear-gradient(to top, $light 50%,transparent 50%);
+    font-family: $delagothic;
+    &:active, :visited, :link {
+    color: $og;
+    transition: background 500ms ease;
+    }
+
+    &:hover {
+        background:linear-gradient(to top, $darkOg 50%,transparent 50%);
+        //transition: all 0.5s ease-in-out;            
+    }
+}
+
+
+
+.button {
+    margin-top: 1em;
+}

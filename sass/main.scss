@@ -1,0 +1,233 @@
+@import 'header';
+@import 'variables';
+@import 'typeface';
+@import 'hamburger';
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $poppins;
+    overflow-x: hidden;
+    
+}
+
+ul, a, a:visited, a:hover, a:active, a:link {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+.inner {
+    padding: 0 2em;
+    margin: 0 auto;
+
+    @include responsive(desktop) {
+        padding: 1em 6em;
+    }
+}
+
+// HELPING CLASS for FLEX SPACE-BETWEEN - CENTER
+.flexsb {
+    @include flexsb;
+}
+
+.flexcol {
+    @include flex(column, space-around, flex-start);
+
+    @include responsive(desktop) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// info sections styles
+
+#info1 {
+    background: $og;
+    height: 70vh;
+    
+
+    .infoStyle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+
+        @include responsive(desktop) {
+            flex-wrap: wrap;
+            flex: 1;
+            padding: 3em;
+            
+        }
+
+        & > h2 {
+            margin: 1em 0;
+            
+            @include responsive(desktop) {
+                //background: red;
+                //padding: 3em;
+            }
+
+        }
+
+        & > ul {
+            margin: 1em 0;
+
+            @include responsive(desktop) {
+                align-self: flex-end;
+                //background: yellow;
+                margin-top: auto;
+                position: relative;
+                padding: 5em;
+            }
+
+        }
+    }
+}
+
+
+#info2 {
+    background: $darkOg;
+    height: 70vh;
+
+    .infoStyle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+
+        @include responsive(desktop) {
+            align-items: center;
+        }
+
+        & > h2 {
+            margin: 1em 0;
+
+            @include responsive(desktop) {
+                width: 300px;
+            }
+        }
+
+        & > ul {
+            margin: 1em 0;
+
+            @include responsive(desktop) {
+                width: 300px;
+            }
+        }
+
+    }
+}
+
+#info3 {
+    background: $dark;
+    height: 70vh;
+
+    .infoStyle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+
+        & > h2, ul {
+            margin: 1em 0;
+        }
+
+    }
+}
+
+.footer {
+    background: $light;
+    height: 70vh;
+
+    .infoStyle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+
+        & > h2, ul {
+            margin: 1em 0;
+        }
+
+    .social {
+        margin: 2em 0;
+
+        & > ion-icon {
+            font-size: 3rem;
+            color: $dark;
+
+            &:hover {
+                color: $darkOg;
+                cursor: pointer;
+                transition: all 500ms ease-in-out;
+            }
+        }
+
+    }
+    }
+}
+
+#caseStudy1 {
+    min-height: 70vh;
+    position: relative;
+}
+
+#caseStudy2 {
+    min-height: 70vh;
+    position: relative;
+}
+
+#caseStudy3 {
+    min-height: 70vh;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+}
+
+@include responsive(tablet) {
+    .preview {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 3em 6em;
+    }
+
+    .caseInfo {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        & > h5 {
+            margin-bottom: 2em;
+        }
+
+        & > a {
+            margin: 2em 0;
+        }
+ 
+    }
+
+    .image {
+        flex: 0.5;
+        
+    }
+}
+
+
